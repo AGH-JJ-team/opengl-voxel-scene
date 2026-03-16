@@ -21,8 +21,16 @@ accessed: 16.03.2026
 
 ## Expectations (Blender scene) vs Reality (OpenGL scene)
 
-<img src="./readme_img/04_expectations.png" width="450px">
-<img src="./readme_img/05_reality.png" width="450px">
+<table width="100%">
+  <tr>
+    <td width="50%">
+      <img src="./readme_img/04_expectations.png" width="100%">
+    </td>
+    <td width="50%">
+      <img src="./readme_img/05_reality.png" width="100%">
+    </td>
+  </tr>
+</table>
 
 ## Applied activatable post-processing filters
 

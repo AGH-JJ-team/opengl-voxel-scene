@@ -1,4 +1,4 @@
-#include "FrameBuffer.h"
+#include "FrameBuffer.hpp"
 #include <iostream>
 
 FrameBuffer::FrameBuffer(unsigned int w, unsigned int h) : width(w), height(h) {
@@ -25,7 +25,7 @@ void FrameBuffer::Init() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureID, 0);
 
-    // Renderbuffer (g³êbia + stencil)
+    // Renderbuffer (gï¿½ï¿½bia + stencil)
     glGenRenderbuffers(1, &RBO);
     glBindRenderbuffer(GL_RENDERBUFFER, RBO);
     glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
@@ -55,7 +55,7 @@ unsigned int FrameBuffer::GetTextureID() const {
 
 void FrameBuffer::Inputs(GLFWwindow* window)
 {
-	// Obs³uga przycisku R do zmiany koloru na negatyw.
+	// Obsï¿½uga przycisku R do zmiany koloru na negatyw.
 	static bool rKeyPressed = false;
 	if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS && !rKeyPressed)
 	{
@@ -67,7 +67,7 @@ void FrameBuffer::Inputs(GLFWwindow* window)
 		rKeyPressed = false;
 	}
 
-	// Obs³uga przycisku T do zmiany koloru na czarno-bia³y.
+	// Obsï¿½uga przycisku T do zmiany koloru na czarno-biaï¿½y.
 	static bool tKeyPressed = false;
 	if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS && !tKeyPressed)
 	{
@@ -79,7 +79,7 @@ void FrameBuffer::Inputs(GLFWwindow* window)
 		tKeyPressed = false;
 	}
 
-	// Obs³uga przycisku Y do zmiany koloru na nasycony czerwieni¹.
+	// Obsï¿½uga przycisku Y do zmiany koloru na nasycony czerwieniï¿½.
 	static bool yKeyPressed = false;
 	if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS && !yKeyPressed)
 	{
@@ -91,7 +91,7 @@ void FrameBuffer::Inputs(GLFWwindow* window)
 		yKeyPressed = false;
 	}
 
-	// Obs³uga przycisku U do zmiany koloru na nasycony zieleni¹.
+	// Obsï¿½uga przycisku U do zmiany koloru na nasycony zieleniï¿½.
 	static bool uKeyPressed = false;
 	if (glfwGetKey(window, GLFW_KEY_U) == GLFW_PRESS && !uKeyPressed)
 	{
@@ -103,7 +103,7 @@ void FrameBuffer::Inputs(GLFWwindow* window)
 		uKeyPressed = false;
 	}
 
-	// Obs³uga przycisku I do zmiany koloru na nasycony niebieskim.
+	// Obsï¿½uga przycisku I do zmiany koloru na nasycony niebieskim.
 	static bool iKeyPressed = false;
 	if (glfwGetKey(window, GLFW_KEY_I) == GLFW_PRESS && !iKeyPressed)
 	{
@@ -115,7 +115,7 @@ void FrameBuffer::Inputs(GLFWwindow* window)
 		iKeyPressed = false;
 	}
 
-	// Obs³uga przycisku O do wykrywania krawêdzi.
+	// Obsï¿½uga przycisku O do wykrywania krawï¿½dzi.
 	static bool oKeyPressed = false;
 	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS && !oKeyPressed)
 	{

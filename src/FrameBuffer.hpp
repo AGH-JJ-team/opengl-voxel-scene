@@ -8,7 +8,7 @@ public:
     FrameBuffer(unsigned int width, unsigned int height);
     ~FrameBuffer();
 
-    //Zmienne do postprocesingu kolorów
+    //Zmienne do postprocesingu kolorï¿½w
     bool invertColors = false;
     bool blackAndWhite = false;
     bool redFilter = false;

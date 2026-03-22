@@ -4,8 +4,8 @@
 #include <glm/glm.hpp>
 #include <string>
 #include <vector>
-#include "shaderClass.h"
-#include "Camera.h"
+#include "shaderClass.hpp"
+#include "Camera.hpp"
 
 class Skybox {
 public:

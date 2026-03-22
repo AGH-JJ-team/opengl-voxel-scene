@@ -1,10 +1,10 @@
-#include "Skybox.h"
+#include "Skybox.hpp"
 #include <stb/stb_image.h>
 #include <iostream>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-// Wierzcho³ki szeœcianu (skyboxa)
+// Wierzchoï¿½ki szeï¿½cianu (skyboxa)
 float skyboxVertices[] =
 {
     //   Coordinates
@@ -18,7 +18,7 @@ float skyboxVertices[] =
     -1.0f,  1.0f, -1.0f
 };
 
-// Indeksy trójk¹tów
+// Indeksy trï¿½jkï¿½tï¿½w
 unsigned int skyboxIndices[] =
 {
     // Right
@@ -41,14 +41,14 @@ unsigned int skyboxIndices[] =
     6, 2, 3
 };
 
-// Konstruktor klasy Skybox – przygotowanie VAO, VBO, EBO oraz za³adowanie tekstur
+// Konstruktor klasy Skybox ï¿½ przygotowanie VAO, VBO, EBO oraz zaï¿½adowanie tekstur
 Skybox::Skybox(const std::vector<std::string>& faces) {
     // Tworzenie i przypisanie VAO/VBO/EBO
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
 
-    // Wype³nienie VAO/VBO/EBO
+    // Wypeï¿½nienie VAO/VBO/EBO
     glBindVertexArray(VAO);
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), skyboxVertices, GL_STATIC_DRAW);
@@ -57,10 +57,10 @@ Skybox::Skybox(const std::vector<std::string>& faces) {
     // Atrybut pozycji (layout location 0)
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    // Odwi¹zanie VAO
+    // Odwiï¿½zanie VAO
     glBindVertexArray(0);
 
-    // Za³aduj tekstury szeœcianu (cubemap)
+    // Zaï¿½aduj tekstury szeï¿½cianu (cubemap)
     loadCubemap(faces);
 }
 
@@ -72,7 +72,7 @@ Skybox::~Skybox() {
     glDeleteTextures(1, &cubemapTexture);
 }
 
-// £adowanie tekstur cubemap z plików
+// ï¿½adowanie tekstur cubemap z plikï¿½w
 void Skybox::loadCubemap(const std::vector<std::string>& faces) {
     glGenTextures(1, &cubemapTexture);
     glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
